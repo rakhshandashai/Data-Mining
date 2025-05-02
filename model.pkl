@@ -1,0 +1,13 @@
+# save_model.py
+from sklearn.linear_model import LinearRegression
+import pickle
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 6, 8, 10])  # Lama pinjam sesuai jumlah barang
+
+model = LinearRegression()
+model.fit(X, y)
+
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f) 
